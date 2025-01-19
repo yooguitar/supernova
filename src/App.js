@@ -13,6 +13,7 @@ import Chapter032 from "./components/Chapter/Chapter03/Chapter032";
 import Chapter03Input from "./components/Chapter/Chapter03/Chapter03Input";
 import Memo from "./components/Chapter/Chapter03/Memo/Memo";
 import { Routes, Route } from "react-router-dom";
+import Homework from "./components/homework/Homework";
 
 /*
   0117 실습 겸 숙제
@@ -24,26 +25,26 @@ import { Routes, Route } from "react-router-dom";
   img태그를 사용하여 출력이 될 때 이미지도 함께 출력이 되도록 구현하시오.
   + 가능하다면 자바스크립트 Date를 이용하여 날짜도 함께 출력이 될 수 있도록 구현하시오.
     
-*/
-
-const arr = [
-  {
-    time: "1교시",
-    content: "props배우기",
-  },
-  {
-    time: "2교시",
-    content: "props 또 배우기",
-  },
-  {
-    time: "3교시",
-    content: "props 실습하기",
-  },
-  {
-    time: "4교시",
-    content: "state배우기",
-  },
-];
+  
+  const arr = [
+    {
+      time: "1교시",
+      content: "props배우기",
+    },
+    {
+      time: "2교시",
+      content: "props 또 배우기",
+    },
+    {
+      time: "3교시",
+      content: "props 실습하기",
+    },
+    {
+      time: "4교시",
+      content: "state배우기",
+    },
+  ];
+  */
 // 실습 - Chapter02 폴더 안에 Chapter02Exam 모듈을 생성하여
 // App.js에 있는 arr에 있는 데이터를 가지고 화면상에 모두 출력이 될 수 있도록 구현해보시오
 
@@ -66,29 +67,36 @@ const arr = [
 <Chapter032 />
 <Chapter03Input />
 <Memo />
+
+function App() {
+  return (
+    <div className="App">
+    <Header />
+    <Nav />
+    <Routes>
+    <Route path="/" element={<Content />} />
+    <Route path="/00" element={<Chap00 />} />
+    <Route path="/01" element={<Chap01 />} />
+    <Route path="/02" element={<Chap02 />} />
+    <Route path="/022" element={<Chap022 />} />
+    <Route path="/03" element={<Chapter03 />} />
+    <Route path="/032" element={<Chapter032 />} />
+    <Route path="/03-input" element={<Chapter03Input />} />
+    <Route path="/memo" element={<Memo />} />
+    <Route path="/*" element={<h2>잘못된 페이지 요청</h2>} />
+    </Routes>
+    <Footer />
+    </div>
+  );
+}
 */
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Content />} />
-        <Route path="/00" element={<Chap00 />} />
-        <Route path="/01" element={<Chap01 />} />
-        <Route path="/02" element={<Chap02 />} />
-        <Route path="/022" element={<Chap022 />} />
-        <Route path="/03" element={<Chapter03 />} />
-        <Route path="/032" element={<Chapter032 />} />
-        <Route path="/03-input" element={<Chapter03Input />} />
-        <Route path="/memo" element={<Memo />} />
-        <Route path="/*" element={<h2>잘못된 페이지 요청</h2>} />
-      </Routes>
-      <Footer />
+      <Homework />
     </div>
   );
 }
-
 export default App;
 // 모듈에서 export 해야할 컴포넌트 or 함수가 단 하나라면 default 사용
 // 컴포넌트 모듈 대문자시작, 함수모듈 소문자 시작
