@@ -2,7 +2,7 @@ import { NavStyledDiv, NavStyledLi, NavStyledLink } from "./Nav.styles";
 import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
-  const navi = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <NavStyledDiv>

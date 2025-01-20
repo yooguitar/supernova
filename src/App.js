@@ -14,6 +14,8 @@ import Chapter03Input from "./components/Chapter/Chapter03/Chapter03Input";
 import Memo from "./components/Chapter/Chapter03/Memo/Memo";
 import { Routes, Route } from "react-router-dom";
 import Homework from "./components/homework/Homework";
+import Foods from "./components/Busan/Foods/Foods";
+import FoodDetail from "./components/Busan/Foods/FoodDetail";
 
 /*
   0117 실습 겸 숙제
@@ -71,21 +73,7 @@ import Homework from "./components/homework/Homework";
 function App() {
   return (
     <div className="App">
-    <Header />
-    <Nav />
-    <Routes>
-    <Route path="/" element={<Content />} />
-    <Route path="/00" element={<Chap00 />} />
-    <Route path="/01" element={<Chap01 />} />
-    <Route path="/02" element={<Chap02 />} />
-    <Route path="/022" element={<Chap022 />} />
-    <Route path="/03" element={<Chapter03 />} />
-    <Route path="/032" element={<Chapter032 />} />
-    <Route path="/03-input" element={<Chapter03Input />} />
-    <Route path="/memo" element={<Memo />} />
-    <Route path="/*" element={<h2>잘못된 페이지 요청</h2>} />
-    </Routes>
-    <Footer />
+      <Homework />
     </div>
   );
 }
@@ -93,7 +81,22 @@ function App() {
 function App() {
   return (
     <div className="App">
-      <Homework />
+      <Header />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Foods />} />
+        <Route path="/foods/:id" element={<FoodDetail />} />
+        <Route path="/00" element={<Chap00 />} />
+        <Route path="/01" element={<Chap01 />} />
+        <Route path="/02" element={<Chap02 />} />
+        <Route path="/022" element={<Chap022 />} />
+        <Route path="/03" element={<Chapter03 />} />
+        <Route path="/032" element={<Chapter032 />} />
+        <Route path="/03-input" element={<Chapter03Input />} />
+        <Route path="/memo" element={<Memo />} />
+        <Route path="/*" element={<h2>잘못된 페이지 요청</h2>} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
